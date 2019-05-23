@@ -27,3 +27,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+<a href="https://luckly-huang.github.io/music/dist/index.html">音乐</a>
