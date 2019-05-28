@@ -13,16 +13,16 @@
 	</ul>
 	</div>
 	<!--中部播放器图片-->
-	<div class="dial" @click="Lrcvon">
-		<div v-show="Lrcyc" @click="Lrcvon">
+	<div class="dial">
+		<div>
 			<img class="auto-img needle" src="../assets/images/stick_bg.png" ref='rotate'/>
 		</div>
-		<div v-show="Lrcyc" @click="Lrcvon">
+		<div>
 			<img class="auto-img round" src="../assets/images/cd_wrapper.png"/>
 			<span><img ref='run' class="auto-img picture" :src="add.pic"/></span>
 		</div>
 		<!--选择列-->
-		<div class="cen" v-show="Lrcyc" @click="Lrcvon">
+		<div class="cen">
          <van-row type="flex" justify="space-around">
 		  <van-col span="4">
 		  	<img class="auto-img icon" src="../assets/images/aixin1.png" v-if="isHeart" @click="Hamster"/>
@@ -38,16 +38,6 @@
 		  	<img class="auto-img icon" src="../assets/images/xzq.png"/>
 		  </van-col>
 		</van-row>
-		</div>
-		<!--隐藏的歌词-->
-		<div class="song-text" v-show="!Lrcyc" @click="Lrcvon">
-					<h3 id="tex1">想你想的快疯了</h3>
-					<h3 id="tex1">想你想的快疯了</h3>
-					<h3 id="tex1">想你想的快疯了</h3>
-					<h4 id="tex2">想你想的快疯了</h4>
-					<h3 id="tex1">想你想的快疯了</h3>
-					<h3 id="tex1">想你想的快疯了</h3>
-					<h3 id="tex1">想你想的快疯了</h3>
 		</div>
 	</div>
 	<!--底部滑条和播放功能-->
@@ -115,9 +105,7 @@
 			    //当前时间
 			    currentTime:"",
 			    //滑动条
-			    slider:"",
-			    //歌词隐藏
-			    Lrcyc:true
+			    slider:""
 			}
 		},
 		
@@ -311,8 +299,6 @@
 			 	}else{
 			 		this.isHeart = !this.Heart
 			 	}
-			 	
-			 	
 			 	this.uid = this.add.id
 			 	
 			 	for (let i = 0; i < this.sc.length; i++){
@@ -339,12 +325,6 @@
 			 	let Hamsterall = window.localStorage
 			 	
 			 	Hamsterall['hamsterall'] = JSON.stringify(this.sc)
-			 },
-			 //显示歌词
-			 Lrcvon() {
-			 	this.Lrcyc = false
-			 	
-			 	console.log('this.Lrcyc',this.Lrcyc)
 			 }
 		}
 	}
